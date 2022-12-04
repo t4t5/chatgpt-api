@@ -7,7 +7,9 @@ import { ChatGPTAPI } from './chatgpt-api'
  * Example CLI for testing functionality.
  */
 async function main() {
-  const api = new ChatGPTAPI()
+  const api = new ChatGPTAPI({
+    headless: true // Set to false to authenticate first time
+  })
   await api.init()
 
   const isSignedIn = await api.getIsSignedIn()
